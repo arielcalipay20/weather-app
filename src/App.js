@@ -1,8 +1,12 @@
 import './App.css';
 import { useState, useEffect } from 'react';
+import DisplayUI from './Component/DisplayUI';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
+//Main Component
 const App = () => {
-
   return (
     <>
       <WeatherUI />
@@ -20,22 +24,58 @@ const WeatherUI = () => {
     manila: "lat=14.599318727430738&lon=120.98179029128475"
   }
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
 
-    <div className='main-container'>
-      <div className='bg-img'>
-        <div className='status-container'>
-          <WeatherCall city={city.quezonCity} />
-        </div>
-        <div className='location-container'>
+    <div className='carousel-container'>
+      <Slider {...settings}>
 
+        <div>
+          <div className='main-container'>
+            <div className='bg-img'>
+              <div className='status-container'>
+                <WeatherCall city={city.caloocan} />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <div>
+          <div className='main-container'>
+            <div className='bg-img'>
+              <div className='status-container'>
+                <WeatherCall city={city.quezonCity} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div className='main-container'>
+            <div className='bg-img'>
+              <div className='status-container'>
+                <WeatherCall city={city.valenzuela} />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </Slider>
     </div>
+
   );
 
 }
 
+
+//Functionality and API call
 const WeatherCall = (props) => {
 
   const [location, setLocation] = useState('');
@@ -49,7 +89,6 @@ const WeatherCall = (props) => {
   const [sunrise, setSunrise] = useState('');
 
   const API_URL = `https://api.openweathermap.org/data/2.5/weather?${props.city}&appid=d2c01417fe717d5dd97b99f62896b7c3`;
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -91,35 +130,9 @@ const WeatherCall = (props) => {
   }, [API_URL]);
 
   return (
-    <div>
-      <div>
-        Location: {location}
-      </div>
-      <div>
-        Temperature: {temperature}°C
-      </div>
-      <div>
-        Weather: {weatherStatus}
-      </div>
-      <div>
-        Feels Like: {feels_like}°C
-      </div>
-      <div>
-        Wind: {windSpeed} km/h
-      </div>
-      <div>
-        Humidity: {humidity}%
-      </div>
-      <div>
-        Visibility: {visibility} km
-      </div>
-      <div>
-        Pressure: {pressure} mb
-      </div>
-      <div>
-        Sunrise: {sunrise}
-      </div>
-    </div>
+    <>
+      <DisplayUI location={location} temperature={temperature} weatherStatus={weatherStatus} feels_like={feels_like} windSpeed={windSpeed} humidity={humidity} visibility={visibility} pressure={pressure} sunrise={sunrise} />
+    </>
   );
 
 }
