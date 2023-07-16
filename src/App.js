@@ -38,33 +38,19 @@ const WeatherUI = () => {
       <Slider {...settings}>
 
         <div>
-          <div className='main-container'>
-            <div className='bg-img'>
-              <div className='status-container'>
-                <WeatherCall city={city.caloocan} />
-              </div>
-            </div>
-          </div>
+          <WeatherCall city={city.caloocan} />
         </div>
 
         <div>
-          <div className='main-container'>
-            <div className='bg-img'>
-              <div className='status-container'>
-                <WeatherCall city={city.quezonCity} />
-              </div>
-            </div>
-          </div>
+          <WeatherCall city={city.quezonCity} />
         </div>
 
         <div>
-          <div className='main-container'>
-            <div className='bg-img'>
-              <div className='status-container'>
-                <WeatherCall city={city.valenzuela} />
-              </div>
-            </div>
-          </div>
+          <WeatherCall city={city.valenzuela} />
+        </div>
+
+        <div>
+          <WeatherCall city={city.manila} />
         </div>
 
       </Slider>
@@ -128,6 +114,7 @@ const WeatherCall = (props) => {
 
     fetchData();
   }, [API_URL]);
+
 
   return (
     <>

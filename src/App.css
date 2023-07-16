@@ -6,6 +6,9 @@
 body {
   margin: 0;
   padding: 0;
+  /* background-image: url('img/weather.jpg');
+  background-size: cover;
+  background-position: center; */
 }
 
 .carousel-container {
@@ -14,15 +17,79 @@ body {
 
 .main-container {
   border: 1px solid gray;
-  border-radius: 5px;
+  border-radius: 12px;
   width: 400px;
   height: 80vh;
-  padding: 5%;
+  padding: 2%;
   margin: 2% auto;
-  background-image: url('img/weather.jpg');
+  color: white;
+  background-image: url('img/manila.jpg');
   background-size: cover;
   background-position: center;
 }
+
+.main-container1 {
+  border: 1px solid gray;
+  border-radius: 12px;
+  width: 400px;
+  height: 80vh;
+  padding: 2%;
+  margin: 2% auto;
+  color: white;
+  background-image: url('img/caloocan.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-container2 {
+  border: 1px solid gray;
+  border-radius: 12px;
+  width: 400px;
+  height: 80vh;
+  padding: 2%;
+  margin: 2% auto;
+  color: white;
+  background-image: url('img/manila.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.main-container3 {
+  border: 1px solid gray;
+  border-radius: 12px;
+  width: 400px;
+  height: 80vh;
+  padding: 2%;
+  margin: 2% auto;
+  color: white;
+  background-image: url('img/valenzuela.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.second-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.sub-second-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sub-second-container div {
+  margin: 20px;
+  font-size: 1.15em;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .sub-second-container div span {
+  color: black;
+  font-weight: bold;
+} */
 
 .icons-container {
   font-size: 6em;
@@ -30,5 +97,32 @@ body {
 
 .location-container {
   color: white;
-  font-size: 2em;
+  font-size: 2.5em;
+  text-align: center;
+  font-weight: bold;
+}
+
+.img-container {
+  width: 150px;
+}
+
+.temperature-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  font-size: 1.15em
+}
+
+.temperature-txt {
+  font-size: 1.5em;
 }

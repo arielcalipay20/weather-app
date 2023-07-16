@@ -1,32 +1,32 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloud } from '@fortawesome/free-solid-svg-icons';
-import { faSun } from '@fortawesome/free-solid-svg-icons';
-import { faCloudRain } from '@fortawesome/free-solid-svg-icons';
-import { faCloudBolt } from '@fortawesome/free-solid-svg-icons';
-import { faSnowflake } from '@fortawesome/free-solid-svg-icons';
-import { faSmog } from '@fortawesome/free-solid-svg-icons';
+import Sun from '../icons/sun.png';
+import Cloud from '../icons/cloud_icon.png';
+import Fog from '../icons/fog_icon.png';
+import Rain from '../icons/rain_icon.png';
+import Snow from '../icons/snow_icon.png';
+import Thunder from '../icons/thunderstorm_icon.png';
 
 
 const Description = (props) => {
+
     const getDescription = (e) => {
         if (props.description.includes('cloud')) {
-            return <FontAwesomeIcon icon={faCloud} />
+            return <img className='img-container' src={Cloud} alt={''} />
         } else if (props.description.includes('clear')) {
-            return <FontAwesomeIcon icon={faSun} />
+            return <img className='img-container' src={Sun} alt={''} />
         } else if (props.description.includes('rain')) {
-            return <FontAwesomeIcon icon={faCloudRain} />
+            return <img className='img-container' src={Rain} alt={''} />
         } else if (props.description.includes('thunderstorm')) {
-            return <FontAwesomeIcon icon={faCloudBolt} />
+            return <img className='img-container' src={Thunder} alt={''} />
         } else if (props.description.includes('snow')) {
-            return <FontAwesomeIcon icon={faSnowflake} />
+            return <img className='img-container' src={Snow} alt={''} />
         } else if (props.description.includes('mist') || props.description.includes('fog')) {
-            return <FontAwesomeIcon icon={faSmog} />
+            return <img className='img-container' src={Fog} alt={''} />
         } else {
-            return <FontAwesomeIcon icon={faCloud} />
+            return <img className='img-container' src={Cloud} alt={''} />
         }
-
     }
+
     return (
         <div className='icons-container'>
             {getDescription()}
