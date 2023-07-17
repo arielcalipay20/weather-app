@@ -22,9 +22,28 @@ const WeatherUI = () => {
         slidesToScroll: 1,
     };
 
+    // const letters = ['W', 'E', 'A', 'T', 'H', 'E', 'R'];
+    // const letters1 = ['S', 'T', 'A', 'T', 'U', 'S'];
     return (
 
         <div className='carousel-container'>
+            {/* <div className='title-txt-container'>
+                <div className="waviy">
+                    {letters.map((letter, index) => (
+                        <span key={index} style={{ '--i': index + 1 }}>
+                            {letter}
+                        </span>
+                    ))}
+                </div>
+                <div className="waviy">
+                    {letters1.map((letter, index) => (
+                        <span key={index} style={{ '--i': index + 1 }}>
+                            {letter}
+                        </span>
+                    ))}
+                </div>
+            </div> */}
+
             <Slider {...settings}>
 
                 <div>

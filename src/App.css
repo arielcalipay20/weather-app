@@ -8,7 +8,7 @@ body {
   padding: 0;
   background-image: linear-gradient(45deg,
       rgba(51, 40, 40, 0.75),
-      rgba(212, 216, 221, 0.75)), url('img/weather.jpg');
+      rgba(212, 216, 221, 0.75)), url('img/weather1.jpg');
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
@@ -138,3 +138,34 @@ body {
 .temperature-txt {
   font-size: 1.5em;
 }
+
+/* .title-txt-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.waviy {
+  position: relative;
+  margin: 40px 10px 0;
+}
+
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  animation: flip 2s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+
+@keyframes flip {
+
+  0%,
+  80% {
+    transform: rotateY(360deg)
+  }
+} */
+
