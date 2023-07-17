@@ -6,7 +6,7 @@ import Rain from '../icons/rain_icon.png';
 import Snow from '../icons/snow_icon.png';
 import Thunder from '../icons/thunderstorm_icon.png';
 
-
+//Conditional For Displaying Weather Icon
 const Description = (props) => {
 
     const getDescription = (e) => {

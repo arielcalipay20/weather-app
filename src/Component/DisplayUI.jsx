@@ -1,14 +1,16 @@
 import React from 'react';
 import Description from './Description';
 
+//Displaying UI
 const DisplayUI = (props) => {
     return (
+
         <div className={props.location === 'Bagong Pagasa' ? 'main-container' : props.location === 'City of Meycauayan' ? 'main-container1' : props.location === 'Parada' ? 'main-container3' : props.location === 'Santa Cruz' ? 'main-container2' : 'main-container'}>
 
-
             <div className='location-container'>
-                {props.location === 'Bagong Pagasa' ? 'Quezon City' : props.location === 'City of Meycauayan' ? 'Caloocan City' : props.location === 'Parada' ? 'Valenzuela City' : props.location === 'Santa Cruz' ? 'Manila' : props.location}
+                {props.location === 'Pasong Tamo' ? 'Quezon City' : props.location === 'City of Meycauayan' ? 'Caloocan City' : props.location === 'Parada' ? 'Valenzuela City' : props.location === 'Santa Cruz' ? 'Manila' : props.location}
             </div>
+
             <div className='second-container'>
 
                 <div className='temperature-container'>
@@ -42,14 +44,12 @@ const DisplayUI = (props) => {
                     <div>
                         Pressure: <span>{props.pressure} mb</span>
                     </div>
-                    {/* <div>
-                        Sunrise: <span>{props.sunrise}</span>
-                    </div> */}
                 </div>
 
             </div>
 
         </div>
+
     );
 }
 
