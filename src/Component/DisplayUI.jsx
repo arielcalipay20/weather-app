@@ -9,7 +9,7 @@ const DisplayUI = (props) => {
             {props.cod === 200 ? <div className={'main-container'} >
 
                 <div className='location-container'>
-                    {props.location}
+                    {props.location.toUpperCase()}
                 </div>
 
                 <div className='second-container'>

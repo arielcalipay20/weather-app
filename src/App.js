@@ -5,9 +5,11 @@ import WeatherUI from './Component/WeatherUI';
 const App = () => {
   
   return (
+
     <>
       <WeatherUI />
     </>
+    
   );
 
 }

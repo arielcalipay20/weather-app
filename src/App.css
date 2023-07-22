@@ -16,6 +16,10 @@ body {
   height: 100vh;
 }
 
+.carousel-container {
+  padding: 10px 0;
+}
+
 .input-container {
   display: flex;
   flex-direction: column;
@@ -52,7 +56,7 @@ body {
 .main-container {
   border: 1px solid gray;
   border-radius: 12px;
-  width: 400px;
+  width: 30%;
   height: 80vh;
   padding: 2%;
   margin: 2% auto;
@@ -77,6 +81,7 @@ body {
   flex-direction: column;
   justify-content: center;
   font-weight: 500;
+  /* font-size: 1.15rem; */
 }
 
 .sub-second-container {
@@ -89,10 +94,6 @@ body {
   font-size: 1.15rem;
   display: flex;
   justify-content: space-between;
-}
-
-.icons-container {
-  font-size: 6rem;
 }
 
 .location-container {
@@ -125,4 +126,93 @@ body {
 
 .temperature-txt {
   font-size: 1.5rem;
+}
+
+/*For Large Screen*/
+@media screen and (max-width: 1200px) {
+
+  .main-container {
+    width: 40%;
+  }
+
+}
+
+/*For Laptops*/
+@media screen and (max-width: 992px) {
+
+  .main-container {
+    width: 50%;
+  }
+
+}
+
+/*For Tablets*/
+@media screen and (max-width: 760px) {
+
+  .main-container {
+    width: 60%;
+  }
+
+  .location-container {
+    font-size: 2;
+  }
+
+  .img-container {
+    width: 125px;
+  }
+
+}
+
+/*For Phone*/
+@media screen and (max-width: 480px) {
+
+  .main-container {
+    width: 70%;
+  }
+
+  .location-container {
+    font-size: 1.75rem;
+  }
+
+  .img-container {
+    width: 80px;
+  }
+
+  .weather-container {
+    font-size: 1rem
+  }
+
+  .temperature-txt {
+    font-size: 1rem;
+  }
+
+  .sub-second-container div {
+    font-size: 1rem;
+  }
+
+}
+
+/*For Thin Device*/
+@media screen and (max-width: 320px) {
+
+  .location-container {
+    font-size: 1.5rem;
+  }
+
+  .img-container {
+    width: 50px;
+  }
+
+  .weather-container {
+    font-size: 0.75rem
+  }
+
+  .temperature-txt {
+    font-size: 0.75rem;
+  }
+
+  .sub-second-container div {
+    font-size: 0.75rem;
+  }
+
 }
