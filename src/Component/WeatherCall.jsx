@@ -1,10 +1,7 @@
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import DisplayUI from './DisplayUI';
 
-//Functionality and API call
 const WeatherCall = (props) => {
-
     const [location, setLocation] = useState('');
     const [temperature, setTemperature] = useState('');
     const [weatherStatus, setWeatherStatus] = useState('');
@@ -13,12 +10,13 @@ const WeatherCall = (props) => {
     const [humidity, setHumidity] = useState('');
     const [visibility, setVisibility] = useState('');
     const [pressure, setPressure] = useState('');
+    const [cod, setCod] = useState('');
 
-    const API_URL = `https://api.openweathermap.org/data/2.5/weather?${props.city}&appid=d2c01417fe717d5dd97b99f62896b7c3`;
 
     useEffect(() => {
         const fetchData = async () => {
             try {
+                const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${props.city}&appid=d2c01417fe717d5dd97b99f62896b7c3`;
                 const response = await fetch(API_URL);
                 const jsonData = await response.json();
 
@@ -42,21 +40,26 @@ const WeatherCall = (props) => {
 
                 setPressure(jsonData.main.pressure);
 
+                setCod(jsonData.cod);
+
             } catch (error) {
                 console.log('Error', error);
             }
         }
 
-        fetchData();
-    }, [API_URL]);
+        if (props.city.trim() !== '') {
+            fetchData();
+        }
 
+    }, [props.city]);
 
     return (
-        <>
-            <DisplayUI location={location} temperature={temperature} weatherStatus={weatherStatus} feels_like={feels_like} windSpeed={windSpeed} humidity={humidity} visibility={visibility} pressure={pressure} />
-        </>
-    );
 
+        <>
+            <DisplayUI location={location} temperature={temperature} weatherStatus={weatherStatus} feels_like={feels_like} windSpeed={windSpeed} humidity={humidity} visibility={visibility} pressure={pressure} cod={cod} />
+        </>
+        
+    );
 }
 
 export default WeatherCall;

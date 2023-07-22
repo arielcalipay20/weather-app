@@ -1,72 +1,38 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React, { useState } from 'react';
 import WeatherCall from './WeatherCall';
 
-//Carousel UI
 const WeatherUI = () => {
+    const [name, setName] = useState('');
+    const [cities, setCities] = useState([]);
 
-    const city = {
-        caloocan: "lat=14.758311574488463&lon=121.0427752809748",
-        quezonCity: "lat=14.673588136931114&lon=121.04911413454475",
-        valenzuela: "lat=14.701827743211217&lon=120.98234027150606",
-        manila: "lat=14.599318727430738&lon=120.98179029128475"
+    const handleChange = (e) => {
+        setName(e.target.value);
     }
 
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    };
+    const getWeather = (e) => {
+        e.preventDefault();
+        if (name.trim() !== '') {
+            setCities([name]);
+            setName('');
+        }
+    }
 
-    // const letters = ['W', 'E', 'A', 'T', 'H', 'E', 'R'];
-    // const letters1 = ['S', 'T', 'A', 'T', 'U', 'S'];
     return (
-
         <div className='carousel-container'>
-            {/* <div className='title-txt-container'>
-                <div className="waviy">
-                    {letters.map((letter, index) => (
-                        <span key={index} style={{ '--i': index + 1 }}>
-                            {letter}
-                        </span>
-                    ))}
-                </div>
-                <div className="waviy">
-                    {letters1.map((letter, index) => (
-                        <span key={index} style={{ '--i': index + 1 }}>
-                            {letter}
-                        </span>
-                    ))}
-                </div>
-            </div> */}
 
-            <Slider {...settings}>
+            <form className='input-container' onSubmit={getWeather}>
+                <input type='text' placeholder='Location Name....' value={name} onChange={handleChange} required />
+                <button type='submit'>Get Weather</button>
+            </form>
 
-                <div>
-                    <WeatherCall city={city.caloocan} />
+            {cities.map((city, index) => (
+                <div key={index}>
+                    <WeatherCall city={city} key={city} />
                 </div>
+            ))}
 
-                <div>
-                    <WeatherCall city={city.quezonCity} />
-                </div>
-
-                <div>
-                    <WeatherCall city={city.valenzuela} />
-                </div>
-
-                <div>
-                    <WeatherCall city={city.manila} />
-                </div>
-
-            </Slider>
         </div>
-
     );
-
 }
 
 export default WeatherUI;
