@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/weather-app/static/css/main.f5cf8438.css",
+    "main.js": "/weather-app/static/js/main.b8aa665f.js",
+    "static/js/787.d9312eb8.chunk.js": "/weather-app/static/js/787.d9312eb8.chunk.js",
+    "static/media/weather.jpg": "/weather-app/static/media/weather.5de1cc4a0444fc2d08f1.jpg",
+    "static/media/manila.jpg": "/weather-app/static/media/manila.cd06f6c618807fff51c3.jpg",
+    "static/media/snow_icon.png": "/weather-app/static/media/snow_icon.4ba80c2e44bbd6858d15.png",
+    "static/media/rain_icon.png": "/weather-app/static/media/rain_icon.dfeffdf781b9da11f684.png",
+    "static/media/sun.png": "/weather-app/static/media/sun.970251f11992a2028a4b.png",
+    "static/media/thunderstorm_icon.png": "/weather-app/static/media/thunderstorm_icon.98830b29330e7b25418f.png",
+    "static/media/cloud_icon.png": "/weather-app/static/media/cloud_icon.3c10c19ae5786d5f13d6.png",
+    "static/media/fog_icon.png": "/weather-app/static/media/fog_icon.bac112524fa26469af64.png",
+    "index.html": "/weather-app/index.html",
+    "main.f5cf8438.css.map": "/weather-app/static/css/main.f5cf8438.css.map",
+    "main.b8aa665f.js.map": "/weather-app/static/js/main.b8aa665f.js.map",
+    "787.d9312eb8.chunk.js.map": "/weather-app/static/js/787.d9312eb8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5cf8438.css",
+    "static/js/main.b8aa665f.js"
+  ]
+}
